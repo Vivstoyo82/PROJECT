@@ -1,12 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import AuthContext from "../../store/auth-context";
 
 import classes from "./Navigation.module.css";
 
 const Navigation = (props) => {
-  return (<AuthContext.Consumer>
-    {(ctx) => {
-      return (
+  const ctx = useContext(AuthContext)
+  // Using useContext hook is simple we have to just use useContext in our react application and 
+  //passed our Context in it i.e here AuthContext and it will return context
+  return (
         <nav className={classes.nav}>
           <ul>
             {ctx.isLoggedIn && (
@@ -27,9 +28,6 @@ const Navigation = (props) => {
           </ul>
         </nav>
         );
-    }}
-  </AuthContext.Consumer>)
-  
 };
 
 export default Navigation;
