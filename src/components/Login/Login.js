@@ -70,7 +70,7 @@ const Login = (props) => {
     dispatchEmail({ type: "USER_INPUT", val: event.target.value });
 
     setFormIsValid(
-      event.target.value.includes("@") && passwordState.passIsValid
+      event.target.value.includes("@") && passwordState.passIsValid // here passwordState woh check hokar ayega valid hai ki nahi
     );
   };
 
@@ -78,8 +78,8 @@ const Login = (props) => {
     // setEnteredPassword(event.target.value);
     dispatchPassword({ type : "INPUT_PASSWORD", val: event.target.value});
 
-    setFormIsValid(emailState.isValid && event.target.value.trim().length > 6);
-  };
+    setFormIsValid(emailState.isValid && event.target.value.trim().length > 6); // aur idhar emailState check hokar ayega ki valid hai ki nahi
+  };  
 
   const validateEmailHandler = () => {
     // setEmailIsValid(emailState.isValid);
